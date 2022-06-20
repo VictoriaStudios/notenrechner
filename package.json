@@ -2,6 +2,7 @@
   "name": "notenrechner",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://victoriastudios.github.io/notenrechner/",
   "dependencies": {
     "@swc/core-linux-x64-gnu": "^1.2.204",
     "@testing-library/jest-dom": "^5.16.4",
