@@ -11,8 +11,8 @@ function App() {
     let fraction = Number(currentPoints) / Number(maxPoints)
     if (fraction >= percentages.sieben) return 7
     if (fraction >= percentages.sechs) return 6
-    if (fraction >= percentages.vier) return 4
     if (fraction >= percentages.fuenf) return 5
+    if (fraction >= percentages.vier) return 4
     if (fraction >= percentages.drei) return 3
     if (fraction >= percentages.zwei) return 2
     if (fraction >= percentages.eins) return 1
