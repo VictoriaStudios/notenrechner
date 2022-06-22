@@ -17,11 +17,10 @@
 .switchTrigger {
     position: relative;
     top: 50%;
-    left: 1px;
     transform: translateY(-50%);
     height: var(--size);
     width: var(--size);
-    background-color: var(--color-tertiary-alt);
+    /* background-color: var(--color-tertiary-alt); */
     border-radius: 50%;
     transition: .5s;
     cursor: pointer;
