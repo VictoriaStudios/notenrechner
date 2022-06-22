@@ -8,6 +8,17 @@ function App() {
   const [maxPoints, setMaxPoints] = useState<string | number | readonly string[] | undefined>(24)
   const [currentPoints, setCurrentPoints] = useState<string | number | readonly string[] | undefined>(24)
   const [examType, setExamType] = useState<0 | 1>(0)
+  const switchExamType = () => {
+    if (examType === 0) {
+      setExamType(1)
+      return
+    }
+    if (examType === 1) {
+      setExamType(0)
+      return
+    }
+  }
+
   const getGrade = () => {
 
     let fraction = Number(currentPoints) / Number(maxPoints)
@@ -42,7 +53,7 @@ function App() {
 
   return (
     <div className={`App ${examType === 1 ? "Appalt" : undefined}`}>
-      <Switch/>
+      <Switch onClick={ switchExamType } />
       <h1 className={examType === 1 ? "h1alt" : undefined}>Notenrechner basierend auf IB Punkten - Klausur 1</h1>
       <h3 className={examType === 1 ? "h3alt" : undefined}>Maximale Punkte:</h3>
       <input type='number' value={maxPoints} onChange={(e) => setMaxPoints(e.target.value)} />

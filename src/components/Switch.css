@@ -7,6 +7,11 @@
     height: var(--size);
     background-color: var(--color-bg-alt);
     border-radius: calc(var(--size) / 2);
+    transition: .5s;
+}
+
+.switchWrapper-alt {
+    background-color: var(--color-bg);
 }
 
 .switchTrigger {
@@ -20,8 +25,4 @@
     border-radius: 50%;
     transition: .5s;
     cursor: pointer;
-}
-
-.switchTrigger:hover {
-    background-color: var(--color-tertiary-alt-hover);
 }
