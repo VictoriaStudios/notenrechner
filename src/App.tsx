@@ -1,13 +1,15 @@
 import './App.css';
 import { useState } from 'react';
 import React from 'react';
-import { percentages } from './utils/percentages';
-import { percentagesPeru } from './utils/percentages';
+import { percentages, percentagesPeru, percentagesExam2, percentagesPeruExam2 } from './utils/percentages';
+import Switch from './components/Switch';
 
 function App() {
   const [maxPoints, setMaxPoints] = useState<string | number | readonly string[] | undefined>(24)
   const [currentPoints, setCurrentPoints] = useState<string | number | readonly string[] | undefined>(24)
+  const [examType, setExamType] = useState<0 | 1>(0)
   const getGrade = () => {
+
     let fraction = Number(currentPoints) / Number(maxPoints)
     if (fraction >= percentages.sieben) return 7
     if (fraction >= percentages.sechs) return 6
@@ -39,15 +41,16 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1>Notenrechner basierend auf IB Punkten - Klausur 1</h1>
-      <h3>Maximale Punkte:</h3>
+    <div className={`App ${examType === 1 ? "Appalt" : undefined}`}>
+      <Switch/>
+      <h1 className={examType === 1 ? "h1alt" : undefined}>Notenrechner basierend auf IB Punkten - Klausur 1</h1>
+      <h3 className={examType === 1 ? "h3alt" : undefined}>Maximale Punkte:</h3>
       <input type='number' value={maxPoints} onChange={(e) => setMaxPoints(e.target.value)} />
-      <h3>Geschaffte Punkte:</h3>
+      <h3 className={examType === 1 ? "h3alt" : undefined}>Geschaffte Punkte:</h3>
       <input type='number' value={currentPoints} onChange={(e) => setCurrentPoints(e.target.value)} />
       <div className="gradeContainer">
-        <h3 className='gradeDisplay'>Note Peru: {getGradePeru()}</h3>
-        <h3 className='gradeDisplay'>Note IB: {getGrade()}</h3>
+        <h3 className={`gradeDisplay ${examType === 1 ? "h3alt" : undefined}`}>Note Peru: {getGradePeru()}</h3>
+        <h3 className={`gradeDisplay ${examType === 1 ? "h3alt" : undefined}`}>Note IB: {getGrade()}</h3>
       </div>
     </div>
   );
