@@ -8,7 +8,7 @@ type switchProps = {
 const Switch = (props: switchProps) => {
     const bgColorNormal = '#e0f6ff'
     const bgColorAlt = '#f584a8'
-    const hoverColorPrimary = '#99e2ff'
+    const hoverColorPrimary = '#66d4ff'
     const hoverColorAlt = '#f04279'
 
     const [active, setActive] = useState<Boolean>(false)
